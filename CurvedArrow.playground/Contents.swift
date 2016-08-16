@@ -92,19 +92,20 @@ extension CGVector {
     }
 }
 
-func curvedArrow(with start: CGPoint, end: CGPoint, strokeColor: UIColor, fillColor: UIColor) -> (CGPathRef, CGPathRef) {
-    let arrowHeadWidth: CGFloat = 15
+func curvedArrow(with start: CGPoint, end: CGPoint, curvature: CGFloat) -> CGPathRef {
+    let arrowHeadWidth: CGFloat = 10
     let arrowHeadLength: CGFloat = 15
-    let tailPath: CGMutablePathRef = CGPathCreateMutable()
+    let path: CGMutablePathRef = CGPathCreateMutable()
     let majorDirection = CGVector(dx: end.x - start.x, dy: end.y - start.y)
     let majorDirectionHalfSize = majorDirection.multiply(0.5).sum(CGVector(point: start))
-    let majorDirectionPerpendicular = majorDirection.makePerpendicular().normalize().multiply(majorDirection.length()/5)
+    let majorDirectionPerpendicular = majorDirection.makePerpendicular().normalize().multiply(majorDirection.length() / max(curvature, 0.1))
     let controlPointVector = majorDirectionHalfSize.sum(majorDirectionPerpendicular)
     let controlPoint = CGPoint(x:controlPointVector.dx, y: controlPointVector.dy)
     let lineEnd = CGVector(dx: controlPoint.x - end.x, dy: controlPoint.y - end.y).normalize().multiply(arrowHeadLength).sum(CGVector(point: end)).asPoint()
 
-    CGPathMoveToPoint(tailPath, nil, start.x, start.y)
-    CGPathAddQuadCurveToPoint(tailPath, nil, controlPoint.x, controlPoint.y, lineEnd.x, lineEnd.y)
+    CGPathMoveToPoint(path, nil, start.x, start.y)
+    CGPathAddQuadCurveToPoint(path, nil, controlPoint.x, controlPoint.y, lineEnd.x, lineEnd.y)
+    CGPathAddQuadCurveToPoint(path, nil, controlPoint.x, controlPoint.y, start.x, start.y)
 
     // Draw the arrow
     let arrowStart = CGVector(point: lineEnd)
@@ -116,16 +117,14 @@ func curvedArrow(with start: CGPoint, end: CGPoint, strokeColor: UIColor, fillCo
     let sine: CGFloat = (arrowDirection.dy)/length
     var transform = CGAffineTransformMake(cosine, sine, -sine, cosine, arrowStart.dx, arrowStart.dy)
 
-    let headPath: CGMutablePathRef = CGPathCreateMutable()
-    CGPathAddLines(headPath, &transform, points, points.count)
+    CGPathAddLines(path, &transform, points, points.count)
 
-    return (tailPath, headPath)
+    return path
 }
 
 
-let (tail, arrow) = curvedArrow(with: CGPoint(x: 0, y: 0), end: CGPoint(x: 300, y: 300), strokeColor: UIColor.redColor(), fillColor: UIColor.redColor())
-UIBezierPath(CGPath: tail)
-UIBezierPath(CGPath: arrow)
+let path = curvedArrow(with: CGPoint(x: 0, y: 0), end: CGPoint(x: 300, y: 300), curvature: 8)
+UIBezierPath(CGPath: path)
 
 
 
