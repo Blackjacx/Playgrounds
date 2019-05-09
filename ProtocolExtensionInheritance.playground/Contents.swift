@@ -1,5 +1,3 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
 
 protocol TestProtocol {
@@ -19,5 +17,5 @@ class TestSubClass: TestClass {
 
 let thing = TestSubClass()
 thing.name //Returns "Other", as expected
-let genericThing: TestProtocol = thing
+let genericThing = thing
 genericThing.name //Returns "Default", but would return "Other" in a base class
