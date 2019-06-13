@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:playgrounds"
+      name = "playgrounds">
+      <FileRef
+         location = "group:Addresses.playground">
+      </FileRef>
+      <FileRef
+         location = "group:ChunkCollection.playground">
+      </FileRef>
+      <FileRef
+         location = "group:CurvedArrow.playground">
+      </FileRef>
+      <FileRef
+         location = "group:CustomCollection.playground">
+      </FileRef>
+      <FileRef
+         location = "group:DiffableCollections.playground">
+      </FileRef>
+      <FileRef
+         location = "group:DisjointTesting.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Endpoint.playground">
+      </FileRef>
+      <FileRef
+         location = "group:FirstLaunch.playground">
+      </FileRef>
+      <FileRef
+         location = "group:ImageDrawing.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Iterator.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Keypath.playground">
+      </FileRef>
+      <FileRef
+         location = "group:MetalSphere.playground">
+      </FileRef>
+      <FileRef
+         location = "group:ProtocolExtensionInheritance.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Reflections.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Rounding.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Snappy.playground">
+      </FileRef>
+      <FileRef
+         location = "group:StringInterpolation.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Swift_5_1_DynamicMemberLookup.playground">
+      </FileRef>
+      <FileRef
+         location = "group:WeakArray.playground">
+      </FileRef>
+      <FileRef
+         location = "group:WWDC2016.playground">
+      </FileRef>
+   </Group>
+</Workspace>
