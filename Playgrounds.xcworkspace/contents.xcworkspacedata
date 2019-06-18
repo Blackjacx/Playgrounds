@@ -17,9 +17,6 @@
          location = "group:CustomCollection.playground">
       </FileRef>
       <FileRef
-         location = "group:DiffableCollections.playground">
-      </FileRef>
-      <FileRef
          location = "group:DisjointTesting.playground">
       </FileRef>
       <FileRef
@@ -54,6 +51,9 @@
       </FileRef>
       <FileRef
          location = "group:StringInterpolation.playground">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/stherold/dev/projects/private/playgrounds/playgrounds/Swift_5_1_DiffableCollections.playground">
       </FileRef>
       <FileRef
          location = "group:Swift_5_1_DynamicMemberLookup.playground">
