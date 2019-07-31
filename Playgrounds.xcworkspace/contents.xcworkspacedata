@@ -17,6 +17,9 @@
          location = "group:CustomCollection.playground">
       </FileRef>
       <FileRef
+         location = "group:DateFormatting.playground">
+      </FileRef>
+      <FileRef
          location = "group:DisjointTesting.playground">
       </FileRef>
       <FileRef
