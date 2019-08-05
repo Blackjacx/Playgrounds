@@ -23,6 +23,9 @@
          location = "group:DisjointTesting.playground">
       </FileRef>
       <FileRef
+         location = "group:DynamicColors.playground">
+      </FileRef>
+      <FileRef
          location = "group:Endpoint.playground">
       </FileRef>
       <FileRef
