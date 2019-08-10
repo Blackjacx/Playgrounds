@@ -1,7 +1,7 @@
 import UIKit
 
 var background: UIColor { UIColor(light: 0xffffff, dark: 0x000000) }
-var text: UIColor { UIColor(light: 0x141923, dark: 0x959596) }
+var text: UIColor { UIColor(light: 0x141923, dark: 0x959596) }
 
 extension UIColor {
 
@@ -58,3 +58,18 @@ extension UIColor {
         self.init(red: UInt8((hex >> 16) & 0xFF), green: UInt8((hex >> 8) & 0xFF), blue: UInt8(hex & 0xFF))
     }
 }
+
+/// `false` use of dynamic provider
+background == background
+
+/// `true` same parameters
+UIColor(red: 0, green: 0, blue: 0, alpha: 0) == UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+
+/// `false` different pointers
+UIColor(red: 0, green: 0, blue: 0, alpha: 0) === UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+
+/// `true` same parameters
+UIColor.white == UIColor.white
+
+/// `true` same pointer
+UIColor.white === UIColor.white
