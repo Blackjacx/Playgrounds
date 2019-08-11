@@ -65,6 +65,9 @@
          location = "group:Swift_5_1_DynamicMemberLookup.playground">
       </FileRef>
       <FileRef
+         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/TypeSafeConfigurable.playground">
+      </FileRef>
+      <FileRef
          location = "group:WeakArray.playground">
       </FileRef>
       <FileRef
