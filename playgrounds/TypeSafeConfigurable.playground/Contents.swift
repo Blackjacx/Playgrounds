@@ -17,12 +17,13 @@ struct FooterViewModel: ViewModel {
 
 /// The CellConfigurator protocol and a UITableView implementation
 
-protocol CellConfigurator {
+protocol Configurator {
     static var reuseId: String { get }
-    func configure(cell: UITableViewCell?) -> UITableViewCell
+    func configure(view: UIView)
+    func registerCell(for table: UITableView)
 }
 
-struct DefaultConfigurator<CellType: Configurable, ModelType: ViewModel>: CellConfigurator where CellType.ModelType == ModelType, CellType: UITableViewCell {
+struct CellConfigurator<CellType: Configurable, ModelType: ViewModel>: Configurator where CellType.ModelType == ModelType, CellType: UITableViewCell {
 
     static var reuseId: String { return String(describing: CellType.self) }
 
@@ -32,16 +33,13 @@ struct DefaultConfigurator<CellType: Configurable, ModelType: ViewModel>: CellCo
         self.model = model
     }
 
-    func configure(cell: UITableViewCell?) -> UITableViewCell {
-        let resolvedCell: UITableViewCell
+    func configure(view: UIView) {
+        (view as! CellType).configure(model: model)
+        print("Configured \(type(of: view)) with reuseId \"\(type(of: self).reuseId)\"")
+    }
 
-        if let cell = cell {
-            resolvedCell = cell
-        } else {
-            resolvedCell = CellType.self(style: .default, reuseIdentifier: type(of: self).reuseId)
-        }
-        (resolvedCell as! CellType).configure(model: model)
-        return resolvedCell
+    func registerCell(for table: UITableView) {
+        table.register(CellType.self, forCellReuseIdentifier: type(of: self).reuseId)
     }
 }
 
@@ -56,7 +54,6 @@ final class HeaderCell: UITableViewCell, Configurable {
     let label = UILabel()
 
     func configure(model: HeaderViewModel) {
-        print("Configured \(type(of: self))")
         label.text = model.id
     }
 }
@@ -65,7 +62,6 @@ final class FooterCell: UITableViewCell, Configurable {
     let label = UILabel()
 
     func configure(model: FooterViewModel) {
-        print("Configured \(type(of: self))")
         label.text = model.id
     }
 }
@@ -74,9 +70,9 @@ final class FooterCell: UITableViewCell, Configurable {
 
 final class DataSource: NSObject, UITableViewDataSource {
 
-    let configurators: [CellConfigurator]
+    let configurators: [Configurator]
 
-    init(configurators: [CellConfigurator]) {
+    init(configurators: [Configurator]) {
         self.configurators = configurators
         super.init()
     }
@@ -92,18 +88,25 @@ final class DataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let configurator = configurators[indexPath.row]
-        let cell =  tableView.dequeueReusableCell(withIdentifier: type(of: configurator).reuseId)
-        return configurator.configure(cell: cell)
+        let reuseId = type(of: configurator).reuseId
+        let cell =  tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath)
+        configurator.configure(view: cell)
+        return cell
+    }
+
+    public func registerCells(for table: UITableView) {
+        configurators.forEach { $0.registerCell(for: table) }
     }
 }
 
 /// Some examples
 
-let header = DefaultConfigurator<HeaderCell, HeaderViewModel>(model: HeaderViewModel(id: "Header"))
-let footer = DefaultConfigurator<FooterCell, FooterViewModel>(model: FooterViewModel(id: "Footer"))
+let header = CellConfigurator<HeaderCell, HeaderViewModel>(model: HeaderViewModel(id: "Header"))
+let footer = CellConfigurator<FooterCell, FooterViewModel>(model: FooterViewModel(id: "Footer"))
 let dataSource = DataSource(configurators: [header, footer])
 
 let table = UITableView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+dataSource.registerCells(for: table)
 table.dataSource = dataSource
 
 PlaygroundPage.current.liveView = table
