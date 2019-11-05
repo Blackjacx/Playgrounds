@@ -38,6 +38,9 @@
          location = "group:Iterator.playground">
       </FileRef>
       <FileRef
+         location = "group:/Users/stherold/Desktop/JSON.playground">
+      </FileRef>
+      <FileRef
          location = "group:Keypath.playground">
       </FileRef>
       <FileRef
