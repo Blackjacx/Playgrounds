@@ -50,6 +50,9 @@
          location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/ProtocolExtensionDefaults.playground">
       </FileRef>
       <FileRef
+         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/Ranges.playground">
+      </FileRef>
+      <FileRef
          location = "group:Reflections.playground">
       </FileRef>
       <FileRef
