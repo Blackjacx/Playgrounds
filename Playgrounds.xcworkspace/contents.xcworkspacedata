@@ -11,6 +11,9 @@
          location = "group:ChunkCollection.playground">
       </FileRef>
       <FileRef
+         location = "group:/Users/stherold/dev/projects/private/playgrounds/playgrounds/Colors.playground">
+      </FileRef>
+      <FileRef
          location = "group:CurvedArrow.playground">
       </FileRef>
       <FileRef
@@ -21,9 +24,6 @@
       </FileRef>
       <FileRef
          location = "group:DisjointTesting.playground">
-      </FileRef>
-      <FileRef
-         location = "group:DynamicColors.playground">
       </FileRef>
       <FileRef
          location = "group:Endpoint.playground">
