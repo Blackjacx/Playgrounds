@@ -47,6 +47,9 @@
          location = "group:MetalSphere.playground">
       </FileRef>
       <FileRef
+         location = "group:PropertyWrapper.playground">
+      </FileRef>
+      <FileRef
          location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/ProtocolExtensionDefaults.playground">
       </FileRef>
       <FileRef
