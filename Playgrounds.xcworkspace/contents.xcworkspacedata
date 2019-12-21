@@ -20,6 +20,9 @@
          location = "group:CustomCollection.playground">
       </FileRef>
       <FileRef
+         location = "group:DarkModeToggle.playground">
+      </FileRef>
+      <FileRef
          location = "group:DateFormatting.playground">
       </FileRef>
       <FileRef
