@@ -14,6 +14,9 @@
          location = "group:/Users/stherold/dev/projects/private/playgrounds/playgrounds/Colors.playground">
       </FileRef>
       <FileRef
+         location = "group:CryptoKit.playground">
+      </FileRef>
+      <FileRef
          location = "group:CurvedArrow.playground">
       </FileRef>
       <FileRef
