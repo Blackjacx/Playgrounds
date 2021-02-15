@@ -11,7 +11,7 @@
          location = "group:ChunkCollection.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/playgrounds/playgrounds/Colors.playground">
+         location = "group:Colors.playground">
       </FileRef>
       <FileRef
          location = "group:CryptoKit.playground">
@@ -50,16 +50,19 @@
          location = "group:Keypath.playground">
       </FileRef>
       <FileRef
+         location = "group:LinkedList.playground">
+      </FileRef>
+      <FileRef
          location = "group:MetalSphere.playground">
       </FileRef>
       <FileRef
          location = "group:PropertyWrapper.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/ProtocolExtensionStaticDynamicDispatch.playground">
+         location = "group:ProtocolExtensionStaticDynamicDispatch.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/Ranges.playground">
+         location = "group:Ranges.playground">
       </FileRef>
       <FileRef
          location = "group:Reflections.playground">
@@ -68,22 +71,25 @@
          location = "group:Rounding.playground">
       </FileRef>
       <FileRef
+         location = "group:ServiceArea.playground">
+      </FileRef>
+      <FileRef
          location = "group:Snappy.playground">
       </FileRef>
       <FileRef
          location = "group:StringInterpolation.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/playgrounds/playgrounds/Swift_5_1_DiffableCollections.playground">
+         location = "group:Swift_5_1_DiffableCollections.playground">
       </FileRef>
       <FileRef
          location = "group:Swift_5_1_DynamicMemberLookup.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/Swift_5_3_EnumCasesAsProtocolWitnesses.playground">
+         location = "group:Swift_5_3_EnumCasesAsProtocolWitnesses.playground">
       </FileRef>
       <FileRef
-         location = "group:/Users/stherold/dev/projects/private/Playgrounds/playgrounds/TypeSafeConfigurable.playground">
+         location = "group:TypeSafeConfigurable.playground">
       </FileRef>
       <FileRef
          location = "group:WeakArray.playground">
